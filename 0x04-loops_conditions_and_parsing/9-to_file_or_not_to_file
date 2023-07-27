@@ -4,18 +4,18 @@
 file_name="school"
 if [ -e "$file_name" ]
 then
-    echo "$file_name exists"
+    echo "$file_name file exists"
     if [ -s "$file_name" ]
     then
-        echo "$file_name is not empty"
+        echo "$file_name file is not empty"
     else
-        echo "$file_name is empty"
+        echo "$file_name file is empty"
     fi
 
     if [ -f "$file_name" ]
     then
-        echo "$file_name is a regular file"
+        echo "$file_name if is a regular file"
     fi
 else
-    echo "$file_name does not exist"
+    echo "$file_name if does not exist"
 fi
