@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script prints "Hi" 10 times, but only for the 9th iteration, it will print "School" instead of "Hi".
+
+for i in {1..10}
+do
+    echo "Best School"
+    if [ "$i" -eq 9 ]
+    then
+        echo "Hi"
+    fi
+done
