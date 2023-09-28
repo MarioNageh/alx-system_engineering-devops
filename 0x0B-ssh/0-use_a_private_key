@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script connect to MY ALX Server Using My Private Key
+ssh -i ~/.ssh/school ubuntu@100.26.17.85
