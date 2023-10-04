@@ -1,4 +1,5 @@
 # Configure Puppet On Nginx
+$node_fqdn = $facts['fqdn']
 
 package{ 'nginx':
   ensure => 'installed',
@@ -29,7 +30,7 @@ file{'/etc/nginx/sites-available/default':
 }",
   require => Package['nginx'],
   notify  => Service['nginx'],
-  replace => 'true',
+  replace => true,
 }
 
 file {'/var/www/html/index.html':
