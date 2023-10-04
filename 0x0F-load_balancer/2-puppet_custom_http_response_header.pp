@@ -1,3 +1,4 @@
+# Install Nginx and add a header to the config file
 exec {'update':
   provider => shell,
   command  => 'sudo apt-get -y update',
