@@ -6,8 +6,8 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo sh -c 'echo "Hello World" > /var/www/html/index.html'
-sudo sh -c 'printf "Ceci n'\''est pas une page\n > /var/www/html/404.html' 
-sudo sh -c ' echo "
+sudo sh -c 'printf "Ceci n'\''est pas une page\n" > /var/www/html/404.html' 
+sudo sh -c 'echo "
 server {
     listen 80 default_server;
     listen [::]:80 default_server ipv6only=on;
@@ -25,7 +25,6 @@ server {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
 
-}
-" > /ect/nginx/sites-available/default'
+}" > /etc/nginx/sites-available/default'
 sudo service nginx start
 sudo nginx -s reload
