@@ -1,5 +1,4 @@
 # Configure Puppet On Nginx
-$node_fqdn = $facts['fqdn']
 
 package{ 'nginx':
   ensure => 'installed',
@@ -15,7 +14,7 @@ file{'/etc/nginx/sites-available/default':
   content => "server {
     listen 80 default_server;
     listen [::]:80 default_server ipv6only=on;
-    add_header X-Served-By ${hostname};
+    add_header X-Served-By $facts['fqdn'];
     root /var/www/html;
     index index.html index.htm;
     server_name localhost;
