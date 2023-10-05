@@ -2,5 +2,5 @@
 # Fix Nginx Issue With Port 8080
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 sed -i '/listen \[::\]:80 default_server ipv6only=on;/d' /etc/nginx/sites-enabled/default
-pkill -o nginx
 service nginx restart
+pkill -o nginx # Kill Oldest Nginx Process Running in 8080
