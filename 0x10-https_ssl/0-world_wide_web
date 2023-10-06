@@ -15,7 +15,4 @@ then
     host_ip=$(dig "$2.$1" | awk '/ANSWER SECTION:/ {getline; print $5}')
     record_type=$(dig "$2.$1" | awk '/ANSWER SECTION:/ {getline; print $4}')
     echo "The subdomain $2 is a $record_type record and points to $host_ip"
-else
-    echo "Usage: $0 <domain name>"
-    exit 1
 fi
