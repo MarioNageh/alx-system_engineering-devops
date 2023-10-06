@@ -3,7 +3,7 @@
 
 if [ $# -eq 1 ]; 
 then
-    subdomains=('www' 'lb-01' 'web-01' 'web-02')
+    declare subdomains=('www' 'lb-01' 'web-01' 'web-02')
     for subdomain in ${subdomains[@]};
     do
          host_ip=$(dig "$subdomain.$1" | awk '/ANSWER SECTION:/ {getline; print $5}')
