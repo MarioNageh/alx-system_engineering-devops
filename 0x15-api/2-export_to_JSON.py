@@ -50,4 +50,4 @@ if __name__ == "__main__":
     user_id = sys.argv[1]
     user_todos = get_user_todos(user_id)
     user = get_user_name(user_id)
-    export_json(user_todos, user_id, user.get("username"))
+    export_json(user_todos, user_id, user.get("name"))
